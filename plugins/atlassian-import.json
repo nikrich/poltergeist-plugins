@@ -1,0 +1,8 @@
+{
+  "id": "atlassian-import",
+  "repo": "nikrich/poltergeist-atlassian-import",
+  "subdir": "",
+  "ref": "main",
+  "author": "nikrich",
+  "tags": ["import", "jira", "confluence"]
+}
