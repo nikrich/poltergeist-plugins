@@ -92,7 +92,7 @@ function page(title, body, script, { depth = 0 } = {}) {
 
   <header class="site-header" id="siteHeader">
     <div class="bar">
-      <a class="brand" href="${base}./" aria-label="poltergeist plugins home">
+      <a class="brand" href="${HOME_URL}" aria-label="poltergeist home">
         ${GHOST_GLYPH}
         <span class="word">poltergeist</span>
       </a>
