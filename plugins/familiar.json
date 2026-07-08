@@ -1,0 +1,8 @@
+{
+  "id": "familiar",
+  "repo": "nikrich/poltergeist",
+  "subdir": "plugins/familiar",
+  "ref": "main",
+  "author": "nikrich",
+  "tags": ["chief-of-staff", "briefing", "open-loops", "productivity"]
+}
