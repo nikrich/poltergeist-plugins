@@ -36,11 +36,13 @@ npm run build      # full site build into site/
 
 ## Deployment
 
-`publish.yml` deploys `site/` to the Cloudflare Pages project `poltergeist-market`
-(custom domain `market.getpoltergeist.com`). It needs two repo secrets:
+`publish.yml` deploys `site/` as the assets-only Cloudflare Worker
+`poltergeist-market` (see `wrangler.jsonc`), which owns the custom domain
+`market.getpoltergeist.com`. It needs two repo secrets:
 
-- `CLOUDFLARE_API_TOKEN` — a token with *Cloudflare Pages: Edit* on the account
+- `CLOUDFLARE_API_TOKEN` — a token with *Workers Scripts: Edit* on the account
+  (create at dash.cloudflare.com → My Profile → API Tokens)
 - `CLOUDFLARE_ACCOUNT_ID`
 
 Without the secrets the workflow still validates and builds; only the deploy step
-is skipped.
+is skipped. Manual deploy: `npm run build && npx wrangler deploy`.

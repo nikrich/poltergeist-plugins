@@ -16,7 +16,7 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
-      - name: deploy to cloudflare pages
+      - name: deploy worker (market.getpoltergeist.com)
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -25,4 +25,4 @@ jobs:
             echo "::warning::CLOUDFLARE_API_TOKEN not set — skipping deploy (site built fine)"
             exit 0
           fi
-          npx -y wrangler@4 pages deploy site --project-name=poltergeist-market --branch=main
+          npx -y wrangler@4 deploy

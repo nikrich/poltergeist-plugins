@@ -1,0 +1,6 @@
+{
+  "name": "poltergeist-market",
+  "compatibility_date": "2026-07-08",
+  "assets": { "directory": "./site", "not_found_handling": "404-page" },
+  "routes": [{ "pattern": "market.getpoltergeist.com", "custom_domain": true }]
+}
