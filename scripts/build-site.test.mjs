@@ -35,6 +35,17 @@ test('buildRegistry emits apiVersion 1 and download paths', () => {
   assert.equal(p.version, '1.0.0');
 });
 
+test('renderIndex advertises the plugin-dev skill download', () => {
+  const html = renderIndex([plugin]);
+  assert.ok(html.includes('dl/poltergeist-plugin-dev-skill.zip'));
+  assert.ok(html.toLowerCase().includes('build your own'));
+});
+
+test('renderDetail links the plugin-dev skill', () => {
+  const html = renderDetail(plugin, '<p>readme</p>');
+  assert.ok(html.includes('dl/poltergeist-plugin-dev-skill.zip'));
+});
+
 test('renderIndex escapes plugin-supplied strings', () => {
   const html = renderIndex([plugin]);
   assert.ok(!html.includes('<script>alert(1)</script>'));

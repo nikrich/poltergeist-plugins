@@ -18,11 +18,12 @@ here is built and published to the marketplace at
 ## Repo layout
 
 ```
-plugins/<id>.json        one registry entry per plugin (this is what a PR adds)
-scripts/lib.mjs          entry + manifest validation, clone/build helpers
-scripts/validate.mjs     PR gate — validates entries end-to-end
-scripts/build-site.mjs   builds site/ (pages, dl/*.zip, registry.json)
-site-src/                static shell (styles, logo)
+plugins/<id>.json          one registry entry per plugin (this is what a PR adds)
+scripts/lib.mjs            entry + manifest validation, clone/build helpers
+scripts/validate.mjs       PR gate — validates entries end-to-end
+scripts/build-site.mjs     builds site/ (pages, dl/*.zip, registry.json)
+site-src/                  static shell (styles, logo)
+skill/poltergeist-plugin-dev/   Claude skill for building plugins (zipped onto the site)
 ```
 
 ## Local development

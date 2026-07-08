@@ -242,6 +242,18 @@ main { flex: 1 0 auto; }
 }
 .tag.muted { background: var(--bg-fog); color: var(--ink-2); }
 
+/* build-your-own card (skill download) */
+.card--build { border-style: dashed; border-color: var(--hairline-2); background: transparent; }
+.card--build:hover { background: var(--bg-vellum); }
+.card--build .desc code { font-family: var(--font-mono); font-size: 0.85em; color: var(--ink-0); background: var(--bg-fog); padding: 1px 5px; border-radius: 4px; }
+
+/* skill hint under the install panel */
+.build-hint {
+  margin-top: 14px;
+  font-family: var(--font-mono); font-size: 11px; line-height: 1.5;
+  color: var(--ink-2);
+}
+
 /* empty / no-results state */
 .empty {
   grid-column: 1 / -1;

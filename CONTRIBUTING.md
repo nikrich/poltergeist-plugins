@@ -1,5 +1,11 @@
 # Submitting a plugin
 
+> **Building with Claude?** Grab the
+> [plugin-dev skill](https://market.getpoltergeist.com/dl/poltergeist-plugin-dev-skill.zip)
+> (source in [skill/poltergeist-plugin-dev/](skill/poltergeist-plugin-dev/)) and unzip it
+> into `~/.claude/skills/` — Claude then knows the full plugin contract, ships a working
+> template, and can scaffold, build, and publish for you.
+
 A plugin is listed on the marketplace by adding **one file** to this repo:
 `plugins/<id>.json`. Open a PR with that file; CI validates and builds your
 plugin, and once merged it appears at https://market.getpoltergeist.com/.

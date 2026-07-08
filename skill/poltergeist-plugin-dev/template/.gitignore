@@ -1,0 +1,2 @@
+node_modules/
+# do NOT ignore dist/ — the app installs pre-built plugins straight from git

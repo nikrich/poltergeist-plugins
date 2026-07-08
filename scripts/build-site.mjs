@@ -135,7 +135,7 @@ const INDEX_SCRIPT = `${STICKY_HEADER_SCRIPT}
     // search + tag filtering
     const search = document.getElementById('search');
     const grid = document.getElementById('grid');
-    const cards = [...grid.querySelectorAll('.card')];
+    const cards = [...grid.querySelectorAll('.card:not(.card--build)')];
     const chips = [...document.querySelectorAll('.chip')];
     const empty = document.getElementById('empty');
     const emptyMsg = document.getElementById('emptyMsg');
@@ -226,6 +226,19 @@ export function renderIndex(plugins) {
       <section class="grid" id="grid" aria-label="plugins">
 
 ${cards}
+
+        <a class="card card--build" href="dl/poltergeist-plugin-dev-skill.zip" download>
+          <div class="top">
+            <div class="icon">${icon('sparkles')}</div>
+            <span class="ver">claude skill</span>
+          </div>
+          <h3>build your own</h3>
+          <p class="desc">download the plugin-dev skill — drop it into <code>~/.claude/skills/</code> and claude scaffolds, builds, and publishes a poltergeist plugin for you.</p>
+          <div class="meta">
+            <span class="author">poltergeist</span>
+            <div class="tags"><span class="tag">skill</span><span class="tag">dev</span></div>
+          </div>
+        </a>
 
         <div class="empty" id="empty">
           <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -323,6 +336,10 @@ ${subdirField}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4M12 17h.01"/></svg>
             <span><b>trusted code only.</b> plugins run unsandboxed as trusted code — review the source before installing.</span>
           </div>
+
+          <div class="build-hint">
+            want one of your own? <a class="link" href="../../dl/poltergeist-plugin-dev-skill.zip" download>grab the plugin-dev claude skill</a>
+          </div>
         </aside>
       </div>
     </div>`;
@@ -352,6 +369,11 @@ function main() {
   rmSync(SITE, { recursive: true, force: true });
   mkdirSync(join(SITE, 'dl'), { recursive: true });
   cpSync(join(ROOT, 'site-src'), SITE, { recursive: true });
+
+  // the plugin-dev claude skill, downloadable from the index + detail pages
+  execFileSync('zip', ['-r', '-q', join(SITE, 'dl', 'poltergeist-plugin-dev-skill.zip'), 'poltergeist-plugin-dev', '-x', '*/node_modules/*', '*/dist/*'], {
+    cwd: join(ROOT, 'skill'),
+  });
 
   for (const p of good) {
     packageZip(p, join(SITE, 'dl'));
