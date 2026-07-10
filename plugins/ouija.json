@@ -1,0 +1,8 @@
+{
+  "id": "ouija",
+  "repo": "nikrich/ouija",
+  "subdir": "poltergeist-plugin",
+  "ref": "main",
+  "author": "nikrich",
+  "tags": ["agents", "triage", "inbox"]
+}
