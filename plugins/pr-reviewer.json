@@ -1,0 +1,8 @@
+{
+  "id": "pr-reviewer",
+  "repo": "nikrich/poltergeist-pr-reviewer",
+  "subdir": "",
+  "ref": "main",
+  "author": "nikrich",
+  "tags": ["github", "code-review", "pull-requests", "claude-code", "automation"]
+}
