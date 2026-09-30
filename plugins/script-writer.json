@@ -1,0 +1,8 @@
+{
+  "id": "script-writer",
+  "repo": "nikrich/poltergeist",
+  "subdir": "plugins/script-writer",
+  "ref": "main",
+  "author": "nikrich",
+  "tags": ["screenplay", "writing", "fountain", "film", "pdf"]
+}
